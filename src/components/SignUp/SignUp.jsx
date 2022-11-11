@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Card, Form, Button, Alert } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 
@@ -32,43 +32,42 @@ const SignUp = () => {
   };
   return (
     <>
-      <strong className="d-flex justify-content-center w-100 text-align-center mb-4">
-        Sava
-      </strong>
-      <Card className="shadow p-2">
-        <Card.Body>
-          <h2 className="text-center mb-3">Sign Up</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required></Form.Control>
-            </Form.Group>
-            <Form.Group className="mb-3" id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                ref={passwordRef}
-                required
-              ></Form.Control>
-            </Form.Group>
-            <Form.Group className="mb-4" id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control
-                type="password"
-                ref={passwordConfirmRef}
-                required
-              ></Form.Control>
-            </Form.Group>
-            <Button disabled={loading} className="w-100 mb-2" type="submit">
-              Sign Up
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-4">
-        Already have an account? <Link to="/signin">Sign In</Link>
-      </div>
+      <div></div>
+      <article>
+        <strong className="d-flex justify-content-center w-100 text-align-center mb-4">
+          Sava
+        </strong>
+        <div className="">
+          <div>
+            <h2 className="">Sign Up</h2>
+            {error && <Alert variant="danger">{error}</Alert>}
+            <form onSubmit={handleSubmit}>
+              <div className="" id="email">
+                <label>Email</label>
+                <input type="email" ref={emailRef} required></input>
+              </div>
+              <div className="" id="password">
+                <label>Password</label>
+                <input type="password" ref={passwordRef} required></input>
+              </div>
+              <div className="" id="password-confirm">
+                <label>Password Confirmation</label>
+                <input
+                  type="password"
+                  ref={passwordConfirmRef}
+                  required
+                ></input>
+              </div>
+              <button disabled={loading} className="" type="submit">
+                Sign Up
+              </button>
+            </form>
+          </div>
+        </div>
+        <div className="">
+          Already have an account? <Link to="/signin">Sign In</Link>
+        </div>
+      </article>
     </>
   );
 };
