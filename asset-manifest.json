@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/test-sava-app/static/css/main.c59cc657.css",
+    "main.js": "/test-sava-app/static/js/main.27facbb0.js",
+    "index.html": "/test-sava-app/index.html",
+    "main.c59cc657.css.map": "/test-sava-app/static/css/main.c59cc657.css.map",
+    "main.27facbb0.js.map": "/test-sava-app/static/js/main.27facbb0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c59cc657.css",
+    "static/js/main.27facbb0.js"
+  ]
+}
