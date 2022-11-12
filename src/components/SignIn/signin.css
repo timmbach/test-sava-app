@@ -1,0 +1,94 @@
+* {
+  font-family: "Manrope", sans-serif;
+}
+main {
+  background-color: red;
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+}
+
+.signup {
+  height: 564px;
+  width: 90vw;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #bcbcbc;
+}
+
+.right {
+  background-color: #ffffff;
+  position: relative;
+  width: 40vw;
+  max-width: 430px;
+  margin-left: auto;
+  padding-bottom: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 100%;
+  margin-left: 100px;
+  margin-bottom: 30px;
+}
+.logo > img:nth-child(1) {
+  width: 25px;
+  height: 20px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.logo > img:nth-child(2) {
+  /* width: 40px; */
+  height: 25px;
+}
+
+form {
+  width: 280px;
+  margin-top: 30px;
+  margin-right: 40px;
+  margin-bottom: 10px;
+  /* height: 200px; */
+}
+form > button {
+  width: 100%;
+  background-color: #bcbcbc;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  border: none;
+}
+.form-group {
+  margin-top: 15px;
+  width: 200px;
+}
+.form-group > input {
+  padding: 10px 20px;
+  width: 280px;
+  border: none;
+  border-radius: 10px;
+  background-color: #e5e5e5;
+}
+.info-placeholder::-webkit-input-placeholder {
+  font-weight: 500;
+  color: #afb2b3;
+}
+.info-placeholder::-moz-placeholder {
+  font-weight: 500;
+  color: #afb2b3;
+}
+.info-placeholder::-ms-input-placeholder {
+  font-weight: 500;
+  color: #afb2b3;
+}
+.form-button {
+  margin-top: 10px;
+}

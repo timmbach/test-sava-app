@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react";
-import { Card, Form, Button, Alert } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import LogoCloud from "../../assets/cloud-logo.png";
+import LogoText from "../../assets/SAVA-logo.png";
+import "./signin.css";
 
 const SignIn = () => {
   const emailRef = useRef();
@@ -26,43 +29,75 @@ const SignIn = () => {
     setLoading(false);
   };
   return (
-    <>
-      <strong className="d-flex justify-content-center w-100 text-align-center mb-4">
-        Sava
-      </strong>
-      <Card className="shadow p-2">
-        <Card.Body>
-          <h2 className="text-center mb-3">Sign In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required></Form.Control>
-            </Form.Group>
-            <Form.Group className="mb-3" id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                ref={passwordRef}
-                required
-              ></Form.Control>
-            </Form.Group>
-            <Button disabled={loading} className="w-100 mb-2" type="submit">
-              Sign In
-            </Button>
-          </Form>
-          <div className="w-100 text-center mt-3">
-            <Link className="text-secondary" to="/forgot-password">
+    <main>
+      <div className="signup">
+        <div className="article-left"></div>
+        <div className="right">
+          <div className="logo">
+            <img src={LogoCloud} alt="logo-cloud" />
+            <img src={LogoText} alt="logo-text" />
+          </div>
+
+          <div>
+            <h3 className="">Welcome back!</h3>
+            <span style={{ fontSize: "0.7rem", fontWeight: "500" }}>
+              Please fill in your details
+            </span>
+            {error && <Alert variant="danger">{error}</Alert>}
+            <form onSubmit={handleSubmit}>
+              <div className="form-group" id="email">
+                <input
+                  type="email"
+                  ref={emailRef}
+                  required
+                  placeholder="Email"
+                  class="info-placeholder"
+                ></input>
+              </div>
+              <div className="form-group" id="password">
+                <input
+                  type="password"
+                  ref={passwordRef}
+                  required
+                  placeholder="Password"
+                  class="info-placeholder"
+                ></input>
+              </div>
+              <button disabled={loading} className="form-button" type="submit">
+                Sign In
+              </button>
+            </form>
+          </div>
+          <div
+            style={{
+              marginRight: "40px",
+              marginBottom: "20px",
+              fontWeight: "500",
+              fontSize: "0.9rem",
+            }}
+          >
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "grey",
+              }}
+              className="text-secondary"
+              to="/forgot-password"
+            >
               Forgot password?
             </Link>
           </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-4">
-        <span>New User? </span>
-        <Link to="/signup">Create new account</Link>
+          <div
+            style={{
+              marginRight: "40px",
+              fontWeight: "500",
+            }}
+          >
+            Don't have an account? <Link to="/signup">Sign Up</Link>
+          </div>
+        </div>
       </div>
-    </>
+    </main>
   );
 };
 

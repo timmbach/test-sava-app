@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react";
-import { Card, Form, Button, Alert } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import LogoCloud from "../../assets/cloud-logo.png";
+import LogoText from "../../assets/SAVA-logo.png";
+import "./forgotpassword.css";
 
 const ForgotPassword = () => {
   const emailRef = useRef();
@@ -26,36 +29,73 @@ const ForgotPassword = () => {
     setLoading(false);
   };
   return (
-    <>
-      <strong className="d-flex justify-content-center w-100 text-align-center mb-4">
-        Sava
-      </strong>
-      <Card className="shadow p-2">
-        <Card.Body>
-          <h4 className="text-center text-secondary mb-3">Password Reset</h4>
-          {error && <Alert variant="danger">{error}</Alert>}
-          {message && <Alert variant="success">{message}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required></Form.Control>
-            </Form.Group>
-            <Button disabled={loading} className="w-100 mb-2" type="submit">
-              Reset Password
-            </Button>
-          </Form>
-          <div className="w-100 text-center mt-3">
-            <Link className="text-secondary" to="/signin">
-              Sign In
+    <main>
+      <div className="signup">
+        <div className="article-left"></div>
+        <div className="right">
+          <div className="logo">
+            <img src={LogoCloud} alt="logo-cloud" />
+            <img src={LogoText} alt="logo-text" />
+          </div>
+
+          <div>
+            <h3 className="">Forgot Password</h3>
+            <span style={{ fontSize: "0.7rem", fontWeight: "500" }}>
+              No need to worry, we'll send you reset instructions
+            </span>
+            {error && <Alert variant="danger">{error}</Alert>}
+            {message && <Alert variant="success">{message}</Alert>}
+            <form onSubmit={handleSubmit}>
+              <div className="form-group" id="email">
+                <input
+                  type="email"
+                  ref={emailRef}
+                  required
+                  placeholder="Email"
+                  class="info-placeholder"
+                ></input>
+              </div>
+              <button disabled={loading} className="form-button" type="submit">
+                Reset Password
+              </button>
+            </form>
+          </div>
+          <div className="login-link">
+            <svg
+              width="16"
+              height="14"
+              viewBox="0 0 16 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.6666 8.5H3.33331"
+                stroke="#212529"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7.99998 13.1668L3.33331 8.50016L7.99998 3.8335"
+                stroke="#212529"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "#212529",
+              }}
+              to="/signin"
+            >
+              Back to SignIn
             </Link>
           </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-4">
-        <span>New User? </span>
-        <Link to="/signup">Create new account</Link>
+        </div>
       </div>
-    </>
+    </main>
   );
 };
 

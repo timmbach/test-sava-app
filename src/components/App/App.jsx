@@ -8,6 +8,7 @@ import SignIn from "../SignIn/SignIn";
 import PrivateRoutes from "../PrivateRoutes";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
+import "./app.css";
 
 const App = () => {
   return (
