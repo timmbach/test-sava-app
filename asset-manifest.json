@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/test-sava-app/static/css/main.c59cc657.css",
-    "main.js": "/test-sava-app/static/js/main.27facbb0.js",
-    "index.html": "/test-sava-app/index.html",
-    "main.c59cc657.css.map": "/test-sava-app/static/css/main.c59cc657.css.map",
-    "main.27facbb0.js.map": "/test-sava-app/static/js/main.27facbb0.js.map"
+    "main.css": "/test-sava-app/tree/timothy/static/css/main.4be4ff16.css",
+    "main.js": "/test-sava-app/tree/timothy/static/js/main.cbb3adb3.js",
+    "static/media/section1_image1.png": "/test-sava-app/tree/timothy/static/media/section1_image1.672dcbd829809540b9be.png",
+    "static/media/section1_image3.png": "/test-sava-app/tree/timothy/static/media/section1_image3.8d07f8c0456bd0769825.png",
+    "static/media/section1_image2.png": "/test-sava-app/tree/timothy/static/media/section1_image2.e9cf5ddb35c18f32e014.png",
+    "index.html": "/test-sava-app/tree/timothy/index.html",
+    "main.4be4ff16.css.map": "/test-sava-app/tree/timothy/static/css/main.4be4ff16.css.map",
+    "main.cbb3adb3.js.map": "/test-sava-app/tree/timothy/static/js/main.cbb3adb3.js.map"
   },
   "entrypoints": [
-    "static/css/main.c59cc657.css",
-    "static/js/main.27facbb0.js"
+    "static/css/main.4be4ff16.css",
+    "static/js/main.cbb3adb3.js"
   ]
 }
