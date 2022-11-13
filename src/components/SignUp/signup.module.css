@@ -1,11 +1,11 @@
 * {
   font-family: "Manrope", sans-serif;
 }
-main {
-  background-color: red;
+.main_div {
   height: 100vh;
   width: 100vw;
   margin: auto;
+  margin-left: -33vw;
   background-color: #e5e5e5;
   display: flex;
   justify-content: center;
@@ -55,7 +55,7 @@ form {
   width: 280px;
   margin-top: 30px;
   margin-right: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   /* height: 200px; */
 }
 form > button {
@@ -66,17 +66,35 @@ form > button {
   color: white;
   border: none;
 }
-.form-group {
+.form_group {
   margin-top: 15px;
   width: 200px;
+  position: relative;
 }
-.form-group > input {
+.form_group > input {
   padding: 10px 20px;
   width: 280px;
   border: none;
   border-radius: 10px;
   background-color: #e5e5e5;
 }
+.form_group > input:focus {
+  outline: none;
+}
+
+#password,
+#password-confirm {
+  position: relative;
+}
+.eye_icon {
+  position: absolute;
+  top: 35%;
+  right: 0;
+  left: 125%;
+  color: #bcbcbc;
+  font-size: 0.9rem;
+}
+
 .info-placeholder::-webkit-input-placeholder {
   font-weight: 500;
   color: #afb2b3;
@@ -89,6 +107,6 @@ form > button {
   font-weight: 500;
   color: #afb2b3;
 }
-.form-button {
+.form_button {
   margin-top: 10px;
 }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import LogoCloud from "../../assets/cloud-logo.png";
 import LogoText from "../../assets/SAVA-logo.png";
-import "./forgotpassword.css";
+import css from "./forgotpassword.module.css";
 
 const ForgotPassword = () => {
   const emailRef = useRef();
@@ -29,11 +29,11 @@ const ForgotPassword = () => {
     setLoading(false);
   };
   return (
-    <main>
-      <div className="signup">
-        <div className="article-left"></div>
-        <div className="right">
-          <div className="logo">
+    <div className={css.main_div}>
+      <div className={css.signup}>
+        <div className={css.article_left}></div>
+        <div className={css.right}>
+          <div className={css.logo}>
             <img src={LogoCloud} alt="logo-cloud" />
             <img src={LogoText} alt="logo-text" />
           </div>
@@ -46,7 +46,7 @@ const ForgotPassword = () => {
             {error && <Alert variant="danger">{error}</Alert>}
             {message && <Alert variant="success">{message}</Alert>}
             <form onSubmit={handleSubmit}>
-              <div className="form-group" id="email">
+              <div className={css.form_group} id="email">
                 <input
                   type="email"
                   ref={emailRef}
@@ -55,12 +55,16 @@ const ForgotPassword = () => {
                   class="info-placeholder"
                 ></input>
               </div>
-              <button disabled={loading} className="form-button" type="submit">
+              <button
+                disabled={loading}
+                className={css.form_button}
+                type="submit"
+              >
                 Reset Password
               </button>
             </form>
           </div>
-          <div className="login-link">
+          <div className={css.login_link}>
             <svg
               width="16"
               height="14"
@@ -95,7 +99,7 @@ const ForgotPassword = () => {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 
