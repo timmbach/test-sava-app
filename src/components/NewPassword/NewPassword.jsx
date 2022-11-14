@@ -18,7 +18,10 @@ const NewPassword = () => {
     setPasswordShow(!passwordShow);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    setError("");
+    setLoading(true);
+  };
 
   return (
     <div className={css.main_div}>
