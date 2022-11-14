@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import LogoCloud from "../../assets/cloud-logo.png";
 import LogoText from "../../assets/SAVA-logo.png";
+import forgotpassword_image from "../../assets/forgotpassword/forgotpassword_image.png";
 import css from "./forgotpassword.module.css";
 
 const ForgotPassword = () => {
@@ -31,28 +32,31 @@ const ForgotPassword = () => {
   return (
     <div className={css.main_div}>
       <div className={css.signup}>
-        <div className={css.article_left}></div>
+        <div className={css.left}>
+          <img src={forgotpassword_image} alt="forgot password" />
+        </div>
         <div className={css.right}>
           <div className={css.logo}>
             <img src={LogoCloud} alt="logo-cloud" />
             <img src={LogoText} alt="logo-text" />
           </div>
 
-          <div>
+          <div style={{ width: "300px" }}>
             <h3 className="">Forgot Password</h3>
-            <span style={{ fontSize: "0.7rem", fontWeight: "500" }}>
-              No need to worry, we'll send you reset instructions
-            </span>
+            <span>No need to worry, we'll send you reset instructions</span>
             {error && <Alert variant="danger">{error}</Alert>}
             {message && <Alert variant="success">{message}</Alert>}
             <form onSubmit={handleSubmit}>
               <div className={css.form_group} id="email">
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
+                  name="email"
+                  id="email"
                   ref={emailRef}
                   required
-                  placeholder="Email"
-                  class="info-placeholder"
+                  // placeholder="Email"
+                  // class="info-placeholder"
                 ></input>
               </div>
               <button

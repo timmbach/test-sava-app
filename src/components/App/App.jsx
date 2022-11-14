@@ -10,6 +10,8 @@ import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
 import css from "./app.module.css";
 import LandingPage from "../LandingPage/LandingPage";
+import TermsAndConditions from "../TermsAndConditions/TermsAndConditions";
+import NewPassword from "../NewPassword/NewPassword";
 
 const App = () => {
   return (
@@ -25,7 +27,12 @@ const App = () => {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/new-password" element={<NewPassword />} />
               <Route path="/landing-page" element={<LandingPage />} />
+              <Route
+                path="/terms-and-conditions"
+                element={<TermsAndConditions />}
+              />
             </Routes>
           </BrowserRouter>
         </div>
