@@ -5,5 +5,5 @@ import { useAuth } from "../contexts/AuthContext";
 export default function PrivateRoutes() {
   const { currentUser } = useAuth();
 
-  return currentUser ? <Outlet /> : <Navigate to="/signin" />;
+  return currentUser ? <Outlet /> : <Navigate to="/landing-page" />;
 }
