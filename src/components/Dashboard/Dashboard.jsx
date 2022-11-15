@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Alert, Button, Card } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+// import { useAuth } from "../../contexts/AuthContext";
 
 const Dashboard = () => {
   const [error, setError] = useState("");
-  const { currentUser, signout } = useAuth();
+  // const { currentUser, signout } = useAuth();
   const history = useNavigate();
 
   const handleSignOut = async function () {
     setError("");
 
     try {
-      await signout();
+      // await signout();
       history("/signin");
     } catch {
       setError("Failed to sign out");
@@ -25,7 +25,8 @@ const Dashboard = () => {
         <Card.Body>
           <h2 className="text-center mb-3">Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <strong>Email:</strong> {currentUser.email}
+          <strong>Email:</strong>
+          {/* {currentUser.email} */}
           <Link to="/update-profile" className="w-100 btn btn-primary mt-3">
             Update Profile
           </Link>
