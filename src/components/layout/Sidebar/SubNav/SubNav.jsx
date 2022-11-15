@@ -6,7 +6,7 @@ export const SubNav = () => {
 	return (
 		<ul className={styles.sub_nav_wrapper}>
 			{categoriesData.map((items) => (
-				<a href="/" className={styles.sub_nav_items}>
+				<a href="/" key={items.id} className={styles.sub_nav_items}>
 					<li className={styles.sub_nav_title}>
 						<h6>{items.title}</h6>
 					</li>
