@@ -29,6 +29,7 @@
   margin: auto;
   width: 70%;
 }
+
 .right {
   background-color: #ffffff;
   position: relative;
@@ -63,15 +64,15 @@
 }
 
 form {
-  width: 300px !important;
+  width: 300px;
   margin-top: 30px;
   margin-right: 40px;
   margin-bottom: 20px;
   /* height: 200px; */
 }
 form > button {
-  width: 320px !important;
-  background-color: #4042d0 !important;
+  width: 320px;
+  background-color: #4042d0;
   border-radius: 10px;
   padding: 10px;
   color: white;
