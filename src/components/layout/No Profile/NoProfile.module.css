@@ -1,0 +1,16 @@
+.no_profile_header {
+  display: flex;
+  gap: 78px;
+  margin: 50px;
+}
+
+.no_profile_header .logo_div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.no_profile_header .actions_div {
+  display: flex;
+  gap: 370px;
+}

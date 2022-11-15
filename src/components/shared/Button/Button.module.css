@@ -1,15 +1,15 @@
 .btn {
-	border: none;
-	cursor: pointer;
-	color: var(--white);
-	background: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  background: var(--primary-color);
 
-	border-radius: 12px;
-	padding: 8px 56px;
-	font-weight: 600;
-	font-size: 19px;
+  border-radius: 12px;
+  padding: 8px 56px;
+  font-weight: 600;
+  font-size: 19px;
 }
 
 .btn:hover {
-	background: var(--secondary-color);
+  background: var(--secondary-color);
 }

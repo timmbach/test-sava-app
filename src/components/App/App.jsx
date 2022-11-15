@@ -17,7 +17,7 @@ const App = () => {
   return (
     // <AuthProvider>
     <Container className={css.app_container} style={{ minHeight: '100vh' }}>
-      <div className={css.routes_div} style={{ maxWidth: '500px' }}>
+      <div className={css.routes_div}>
         <BrowserRouter>
           <Routes>
             <Route element={<PrivateRoutes />}>
