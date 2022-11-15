@@ -1,1 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Julius+Sans+One&family=KoHo:wght@700&family=Langar&family=Manrope:wght@400;500;600;800&family=Poppins:wght@400;600;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Manrope", sans-serif;
+}
+
+:root {
+	--primary-color: #4042d0;
+	--secondary-color: #6062d8;
+	--white: #fcfcfc;
+	--dark: #111315;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
