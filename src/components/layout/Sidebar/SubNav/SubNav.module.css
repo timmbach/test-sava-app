@@ -1,5 +1,5 @@
 .sub_nav_wrapper {
-	background-color: rgb(208, 208, 208);
+	background-color: rgb(237, 237, 237);
 	margin-top: 18px;
 	width: 100%;
 }
@@ -13,7 +13,7 @@
 }
 
 .sub_nav_title {
-  padding: 2px;
+  padding: 5px;
 	color: var(--dark);
 	font-weight: 500;
 	font-size: 19px;
