@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 // import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Dashboard from "../Dashboard/Dashboard";
+import Layout from "../layout/Layout";
 import SignUp from "../SignUp/SignUp";
 import SignIn from "../SignIn/SignIn";
 import PrivateRoutes from "../PrivateRoutes";
@@ -21,7 +21,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route element={<PrivateRoutes />}>
-              <Route exact path="/" element={<Dashboard />} />
+             <Route path="/" element={<Layout />} />
               <Route path="/update-profile" element={<UpdateProfile />} />
             </Route>
             <Route path="/signup" element={<SignUp />} />
@@ -39,6 +39,5 @@ const App = () => {
     </Container>
     // </AuthProvider>
   );
-};
 
 export default App;
