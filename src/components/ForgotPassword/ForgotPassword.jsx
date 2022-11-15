@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+// import { useAuth } from "../../contexts/AuthContext";
 import LogoCloud from "../../assets/cloud-logo.png";
 import LogoText from "../../assets/SAVA-logo.png";
 import forgotpassword_image from "../../assets/forgotpassword/forgotpassword_image.png";
@@ -9,7 +9,7 @@ import css from "./forgotpassword.module.css";
 
 const ForgotPassword = () => {
   const emailRef = useRef();
-  const { resetPassword } = useAuth();
+  // const { resetPassword } = useAuth();
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,7 +21,7 @@ const ForgotPassword = () => {
       setMessage("");
       setError("");
       setLoading(true);
-      await resetPassword(emailRef.current.value);
+      // await resetPassword(emailRef.current.value);
       setMessage("Password reset has been sent to registered email!");
     } catch {
       setError("Failed to Reset Password");
