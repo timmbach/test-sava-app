@@ -21,7 +21,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route element={<PrivateRoutes />}>
-             <Route path="/" element={<Layout />} />
+              <Route path="/" element={<Layout />} />
               <Route path="/update-profile" element={<UpdateProfile />} />
             </Route>
             <Route path="/signup" element={<SignUp />} />
@@ -29,15 +29,13 @@ const App = () => {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/new-password" element={<NewPassword />} />
             <Route path="/landing-page" element={<LandingPage />} />
-            <Route
-              path="/terms-and-conditions"
-              element={<TermsAndConditions />}
-            />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           </Routes>
         </BrowserRouter>
       </div>
     </Container>
     // </AuthProvider>
   );
+};
 
 export default App;
