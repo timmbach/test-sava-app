@@ -1,17 +1,17 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-// import { AuthProvider } from '../contexts/AuthContext'
+// import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Dashboard from '../components/Dashboard/Dashboard'
-import SignUp from '../components/SignUp/SignUp'
-import SignIn from '../components/SignIn/SignIn'
-import PrivateRoutes from '../components/PrivateRoutes'
-import ForgotPassword from '../components/ForgotPassword/ForgotPassword'
-import UpdateProfile from '../components/UpdateProfile/UpdateProfile'
+import Layout from '../layout/Layout'
+import SignUp from '../SignUp/SignUp'
+import SignIn from '../SignIn/SignIn'
+import PrivateRoutes from '../PrivateRoutes'
+import ForgotPassword from '../ForgotPassword/ForgotPassword'
+import UpdateProfile from '../UpdateProfile/UpdateProfile'
 import css from './app.module.css'
-import LandingPage from '../components/LandingPage/LandingPage'
-import TermsAndConditions from '../components/TermsAndConditions/TermsAndConditions'
-import NewPassword from '../components/NewPassword/NewPassword'
+import LandingPage from '../LandingPage/LandingPage'
+import TermsAndConditions from '../TermsAndConditions/TermsAndConditions'
+import NewPassword from '../NewPassword/NewPassword'
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route element={<PrivateRoutes />}>
-              <Route exact path='/' element={<Dashboard />} />
+              <Route path='/' element={<Layout />} />
               <Route path='/update-profile' element={<UpdateProfile />} />
             </Route>
             <Route path='/signup' element={<SignUp />} />
@@ -29,10 +29,7 @@ const App = () => {
             <Route path='/forgot-password' element={<ForgotPassword />} />
             <Route path='/new-password' element={<NewPassword />} />
             <Route path='/landing-page' element={<LandingPage />} />
-            <Route
-              path='/terms-and-conditions'
-              element={<TermsAndConditions />}
-            />
+            <Route path='/terms-and-conditions' element={<TermsAndConditions />} />
           </Routes>
         </BrowserRouter>
       </div>
