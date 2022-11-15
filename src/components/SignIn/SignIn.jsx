@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Alert } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+// import { useAuth } from "../../contexts/AuthContext";
 import LogoCloud from "../../assets/cloud-logo.png";
 import LogoText from "../../assets/SAVA-logo.png";
 import signin_image from "../../assets/signin/signin_image.png";
@@ -10,7 +10,7 @@ import css from "./signin.module.css";
 const SignIn = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { signin } = useAuth();
+  // const { signin } = useAuth();
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -26,7 +26,7 @@ const SignIn = () => {
     try {
       setError("");
       setLoading(true);
-      await signin(emailRef.current.value, passwordRef.current.value);
+      // await signin(emailRef.current.value, passwordRef.current.value);
       history("/");
     } catch {
       setError("Failed to Sign In");

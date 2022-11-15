@@ -54,7 +54,7 @@ const NewPassword = () => {
                   // class="info-placeholder"
                 ></input>
                 <i
-                  class={`${css.eye_icon} fa-solid ${
+                  className={`${css.eye_icon} fa-solid ${
                     passwordShow ? "fa-eye" : "fa-eye-slash"
                   }`}
                   onClick={handlePasswordShow}

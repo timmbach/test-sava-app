@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Alert } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+// import { useAuth } from "../../contexts/AuthContext";
+// import axios from "../../api/axios.js";
 import LogoCloud from "../../assets/cloud-logo.png";
 import LogoText from "../../assets/SAVA-logo.png";
 import signup_image from "../../assets/signup/signup_image.png";
@@ -11,7 +12,7 @@ const SignUp = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
+  // const { signup } = useAuth();
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -31,7 +32,7 @@ const SignUp = () => {
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      // await signup(emailRef.current.value, passwordRef.current.value);
       history("/");
     } catch {
       setError("Failed to create account");
@@ -82,13 +83,13 @@ const SignUp = () => {
                   // class="info-placeholder"
                 ></input>
                 <i
-                  class={`${css.eye_icon} fa-solid ${
+                  className={`${css.eye_icon} fa-solid ${
                     passwordShow ? "fa-eye" : "fa-eye-slash"
                   }`}
                   onClick={handlePasswordShow}
                 ></i>
               </div>
-              <div className={css.form_group} id="password-confirm">
+              {/* <div className={css.form_group} id="password-confirm">
                 <label htmlFor="password-confirm">Confirm Password</label>
                 <input
                   name="password-confirm"
@@ -105,10 +106,15 @@ const SignUp = () => {
                   }`}
                   onClick={handlePasswordShow}
                 ></i>
-              </div>
+              </div> */}
               <span style={{ fontSize: "0.6rem", fontWeight: "500" }}>
-                Clicking on 'Sign Up' means you agree to our terms and
-                conditions
+                Clicking on 'Sign Up' means you agree to our{" "}
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/terms-and-conditions"
+                >
+                  terms and conditions
+                </Link>
               </span>
               <button
                 disabled={loading}
