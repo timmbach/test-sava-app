@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Alert } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 // import { useAuth } from "../../contexts/AuthContext";
-import axios from "../../api/axios.js";
+// import axios from "../../api/axios.js";
 import LogoCloud from "../../assets/cloud-logo.png";
 import LogoText from "../../assets/SAVA-logo.png";
 import signup_image from "../../assets/signup/signup_image.png";
