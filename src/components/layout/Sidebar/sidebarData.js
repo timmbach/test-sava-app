@@ -1,17 +1,12 @@
-import {
-	GalleryIcon,
-	CategoriesIcon,
-	BinIcon,
-	ArchiveIcon,
-} from "../../../assets/svg";
+import { GalleryIcon, CategoriesIcon, BinIcon, ArchiveIcon } from "../../../assets/svg";
 
 export const navData = [
 	{
 		id: 1,
 		Icon: GalleryIcon,
 		title: "All pictures",
-		status: "active",
-		href: "/dashboard",
+		status: "inactive",
+		href: "/",
 	},
 	{
 		id: 2,
@@ -19,6 +14,7 @@ export const navData = [
 		title: "Categories",
 		status: "inactive",
 		href: "/categories",
+		subnav: true,
 	},
 	{
 		id: 3,
@@ -38,27 +34,27 @@ export const navData = [
 
 export const categoriesData = [
 	{
-		id: 1,
+		id: 5,
 		title: "Just You",
 		status: "active",
-		href: "/",
+		href: "/just-you",
 	},
 	{
-		id: 2,
+		id: 6,
 		title: "You and friends",
 		status: "inactive",
-		href: "/",
+		href: "/you-and-friends",
 	},
 	{
-		id: 3,
+		id: 7,
 		title: "You and pets",
 		status: "inactive",
-		href: "/",
+		href: "/you-and-pets",
 	},
 	{
-		id: 4,
+		id: 8,
 		title: "Happy Moments",
 		status: "inactive",
-		href: "/",
+		href: "/happy-moments",
 	},
 ];
