@@ -1,0 +1,26 @@
+.sub_nav_wrapper {
+	background-color: rgb(237, 237, 237);
+	margin-top: 18px;
+	width: 100%;
+}
+
+.sub_nav_items {
+	margin-bottom: 12px;
+	display: block;
+}
+.sub_nav_items:last-of-type {
+	margin-bottom: 0;
+}
+
+.sub_nav_title {
+  padding: 5px;
+	color: var(--dark);
+	font-weight: 500;
+	font-size: 19px;
+}
+.sub_nav_title:hover,
+.sub_nav_title.active {
+	background-color: var(--secondary-color);
+	font-weight: 600;
+	color: #fefefe;
+}
