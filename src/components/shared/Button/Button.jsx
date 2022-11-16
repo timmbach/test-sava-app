@@ -1,10 +1,13 @@
 import React from 'react'
 import styles from './Button.module.css'
 
-export const Button = ({ text, status }) => {
+export const Button = ({ text = 'Upload', manualStyle = styles.btn }) => {
   return (
-    <button type='button' disabled={status} className={styles.btn}>
-      {text || 'Upload'}
-    </button>
+    <div className={styles.button_shared}>
+      <label htmlFor='upload' className={manualStyle}>
+        {text}
+      </label>
+      <input type='file' id='upload' accept='image/*' />
+    </div>
   )
 }

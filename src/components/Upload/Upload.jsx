@@ -21,11 +21,11 @@ const Upload = () => {
           images without stress
         </p>
         <div>
-          <label htmlFor='upload' onClick={() => setAccess(prev => !prev)}>
+          <label htmlFor='server-upload' onClick={() => setAccess(prev => !prev)}>
             Start uploading
           </label>
           {/* i still don't know how to implement the file with permission */}
-          {/* <input type='file' id='upload' accept='image/*' /> */}
+          {/* <input type='file' id='server-upload' accept='image/*' /> */}
         </div>
         {access && (
           <aside>
