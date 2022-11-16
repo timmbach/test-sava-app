@@ -48,9 +48,7 @@ const SignIn = () => {
 
           <div>
             <h3 className="">Welcome back!</h3>
-            <span style={{ fontSize: "0.8rem", fontWeight: "500" }}>
-              Please fill in your details
-            </span>
+            <span style={{ fontSize: "0.8rem", fontWeight: "500" }}>Please fill in your details</span>
             {error && <Alert variant="danger">{error}</Alert>}
             <form onSubmit={handleSubmit}>
               <div className={css.form_group} id="email">
@@ -77,38 +75,40 @@ const SignIn = () => {
                   // class="info-placeholder"
                 ></input>
                 <i
-                  class={`${css.eye_icon} fa-solid ${
-                    passwordShow ? "fa-eye" : "fa-eye-slash"
-                  }`}
+                  className={`${css.eye_icon} fa-solid ${passwordShow ? "fa-eye" : "fa-eye-slash"}`}
                   onClick={handlePasswordShow}
                 ></i>
               </div>
               <div
                 style={{
-                  marginRight: "-10px",
-                  marginTop: "5px",
+                  // marginRight: "-10px",
+                  marginTop: "10px",
                   display: "flex",
-                  justifyContent: "flex-end",
+                  justifyContent: "space-between",
                   fontWeight: "500",
                   fontSize: "0.9rem",
                 }}
               >
-                <Link
-                  style={{
-                    textDecoration: "none",
-                    color: "grey",
-                  }}
-                  className="text-secondary"
-                  to="/forgot-password"
-                >
-                  Forgot password?
-                </Link>
+                <div>
+                  <input type="checkbox" name="remember-me" id="remember-me" />
+                  <label style={{ marginLeft: "5px" }} htmlFor="remember-me">
+                    Remember me?
+                  </label>
+                </div>
+                <div>
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "grey",
+                    }}
+                    className="text-secondary"
+                    to="/forgot-password"
+                  >
+                    Forgot password?
+                  </Link>
+                </div>
               </div>
-              <button
-                disabled={loading}
-                className={css.form_button}
-                type="submit"
-              >
+              <button disabled={loading} className={css.form_button} type="submit">
                 Sign In
               </button>
             </form>

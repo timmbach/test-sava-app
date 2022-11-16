@@ -5,10 +5,14 @@
   height: 100vh;
   width: 100vw;
   margin: auto;
-  margin-left: -33vw;
+  /* margin-left: -33vw; */
   background-color: #e5e5e5;
   display: flex;
   justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 54500px;
 }
 
 .signup {
