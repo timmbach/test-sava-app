@@ -4,6 +4,7 @@ import { Sidebar } from './Sidebar/Sidebar'
 import styles from './Layout.module.css'
 import NoProfileHeader from './No Profile/NoProfileHeader'
 import NoProfileBody from './No Profile/NoProfileBody'
+import Upload from '../Upload/Upload'
 
 const Layout = () => {
   // There is gonna be a divide here, when its an existing user, the normal dashboard would be displayed and when its a new user the upload profile would be displayed
@@ -11,7 +12,7 @@ const Layout = () => {
   //i think the new user is gonna be gotten from a context or a useeffect...
 
   //usestate to manage user state
-  const [newUser, setNewUser] = useState(true)
+  const [newUser, setNewUser] = useState(false)
 
   if (newUser) {
     return (
@@ -25,7 +26,9 @@ const Layout = () => {
   return (
     <div className={styles.layout_wrapper}>
       <Sidebar />
-      <Dash />
+      <Dash>
+        <Upload />
+      </Dash>
     </div>
   )
 }

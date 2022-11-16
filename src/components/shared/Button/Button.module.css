@@ -10,6 +10,10 @@
   font-size: 19px;
 }
 
-.btn:hover {
+.btn:not(:disabled):hover {
   background: var(--secondary-color);
+}
+
+.btn:disabled {
+  opacity: 0.5;
 }

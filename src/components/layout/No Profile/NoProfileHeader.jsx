@@ -14,7 +14,7 @@ const NoProfileHeader = () => {
       </div>
       <div className={styles.actions_div}>
         <SearchInput />
-        <Button />
+        <Button status={true} />
       </div>
     </div>
   )
