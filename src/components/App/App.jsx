@@ -1,6 +1,7 @@
 import React from "react";
 // import { Container } from "react-bootstrap";
 // import { AuthProvider } from "../contexts/AuthContext";
+// import { AuthProvider } from "../../contexts/AuthContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "../layout/Layout";
 import SignUp from "../SignUp/SignUp";
@@ -15,7 +16,7 @@ import NewPassword from "../NewPassword/NewPassword";
 const App = () => {
   return (
     // <AuthProvider>
-    // <Container>
+    <div>
       <div>
         <BrowserRouter>
           <Routes>
@@ -32,7 +33,7 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </div>
-    // </Container>
+    </div>
     // </AuthProvider>
   );
 };
