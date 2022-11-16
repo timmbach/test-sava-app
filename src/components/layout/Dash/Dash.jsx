@@ -4,7 +4,7 @@ import { Button } from '../../shared/Button/Button'
 import { SearchInput } from '../../shared/Search/SearchInput'
 import styles from './Dash.module.css'
 
-export const Dash = ({ children }) => {
+export const Dash = () => {
   return (
     <div className={styles.dash_wrapper}>
       <div className={styles.dash_header}>
@@ -12,11 +12,9 @@ export const Dash = ({ children }) => {
         <Button text='Upload' />
       </div>
 
-      {/* <div className={styles.dash_body}>
+      <div className={styles.dash_body}>
         <Outlet />
-      </div> */}
-      {/* i don't know how the outlet stuff works outside of a private route component, so i made a temp patch with the children prop */}
-      {children}
+      </div>
     </div>
   )
 }

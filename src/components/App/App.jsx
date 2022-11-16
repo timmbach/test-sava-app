@@ -12,6 +12,8 @@ import UpdateProfile from '../UpdateProfile/UpdateProfile'
 import LandingPage from '../LandingPage/LandingPage'
 import TermsAndConditions from '../TermsAndConditions/TermsAndConditions'
 import NewPassword from '../NewPassword/NewPassword'
+import NoProfile from '../layout/No Profile/NoProfile'
+import Upload from '../Upload/Upload'
 
 const App = () => {
   return (
@@ -21,7 +23,10 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route element={<PrivateRoutes />}>
-              <Route path='/' element={<Layout />} />
+              <Route path='/' element={<Layout />}>
+                <Route index element={<Upload />} />
+              </Route>
+              <Route path='/upload-new-user' element={<NoProfile />} />
               <Route path='/update-profile' element={<UpdateProfile />} />
             </Route>
             <Route path='/signup' element={<SignUp />} />

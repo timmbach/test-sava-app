@@ -10,3 +10,8 @@
   align-items: center;
   margin-bottom: 47px;
 }
+
+.dash_body {
+  width: 100%;
+  min-height: 70vh;
+}
