@@ -1,5 +1,5 @@
 import React from "react";
-import { AuthProvider } from "../../contexts/AuthContext";
+// import { AuthProvider } from "../../contexts/AuthContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "../layout/Layout";
 import SignUp from "../SignUp/SignUp";
@@ -13,26 +13,26 @@ import NewPassword from "../NewPassword/NewPassword";
 
 const App = () => {
   return (
-    <AuthProvider>
+    // <AuthProvider>
+    <div>
       <div>
-        <div>
-          <BrowserRouter>
-            <Routes>
-              <Route element={<PrivateRoutes />}>
-                <Route path="/" element={<Layout />} />
-                <Route path="/update-profile" element={<UpdateProfile />} />
-              </Route>
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/signin" element={<SignIn />} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
-              <Route path="/new-password" element={<NewPassword />} />
-              <Route path="/landing-page" element={<LandingPage />} />
-              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-            </Routes>
-          </BrowserRouter>
-        </div>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<PrivateRoutes />}>
+              <Route path="/" element={<Layout />} />
+              <Route path="/update-profile" element={<UpdateProfile />} />
+            </Route>
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/new-password" element={<NewPassword />} />
+            <Route path="/landing-page" element={<LandingPage />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          </Routes>
+        </BrowserRouter>
       </div>
-    </AuthProvider>
+    </div>
+    // </AuthProvider>
   );
 };
 

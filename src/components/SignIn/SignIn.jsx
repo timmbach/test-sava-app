@@ -59,6 +59,7 @@ const SignIn = () => {
                   type="email"
                   ref={emailRef}
                   required
+                  autocomplete="off"
                   // placeholder="Email"
                   // class="info-placeholder"
                 ></input>
@@ -92,7 +93,7 @@ const SignIn = () => {
                 <div>
                   <input type="checkbox" name="remember-me" id="remember-me" />
                   <label style={{ marginLeft: "5px" }} htmlFor="remember-me">
-                    Remember me?
+                    Remember me.
                   </label>
                 </div>
                 <div>
