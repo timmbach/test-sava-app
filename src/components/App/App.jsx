@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 // import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "../layout/Layout";
@@ -8,7 +8,6 @@ import SignIn from "../SignIn/SignIn";
 import PrivateRoutes from "../PrivateRoutes";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
-// import css from "./app.module.css";
 import LandingPage from "../LandingPage/LandingPage";
 import TermsAndConditions from "../TermsAndConditions/TermsAndConditions";
 import NewPassword from "../NewPassword/NewPassword";
@@ -16,7 +15,7 @@ import NewPassword from "../NewPassword/NewPassword";
 const App = () => {
   return (
     // <AuthProvider>
-    <Container>
+    // <Container>
       <div>
         <BrowserRouter>
           <Routes>
@@ -33,7 +32,7 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </div>
-    </Container>
+    // </Container>
     // </AuthProvider>
   );
 };
