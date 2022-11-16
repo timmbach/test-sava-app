@@ -1,19 +1,18 @@
-.btn {
+.button_shared input {
+  display: none;
+}
+
+.button_shared .btn {
   border: none;
   cursor: pointer;
   color: var(--white);
   background: var(--primary-color);
-
   border-radius: 12px;
   padding: 8px 56px;
   font-weight: 600;
   font-size: 19px;
 }
 
-.btn:not(:disabled):hover {
+.button_shared .btn:hover {
   background: var(--secondary-color);
-}
-
-.btn:disabled {
-  opacity: 0.5;
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import hero from '../../../assets/no-profile-lady.png'
+import { Button } from '../../shared/Button/Button'
 import styles from './NoProfile.module.css'
 
 const NoProfileBody = () => {
@@ -13,10 +14,7 @@ const NoProfileBody = () => {
             Please upload a profile picture to access all our features. This will help us with storing and automatically
             sorting your data into categories.
           </p>
-          <form>
-            <label htmlFor='upload'>Upload profile picture</label>
-            <input type='file' id='upload' accept='image/*' />
-          </form>
+          <Button text='Upload profile picture' manualStyle={styles.btn} />
         </aside>
       </section>
     </div>
