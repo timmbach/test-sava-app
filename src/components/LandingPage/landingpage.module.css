@@ -169,7 +169,7 @@ header {
   text-align: center;
   height: 100vh;
   padding: 50px 100px;
-  padding-top: 12vh;
+  padding-top: 10vh;
 }
 .section3_info {
 }
@@ -196,7 +196,8 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px 100px;
+  padding: 20px 20px 100px 100px;
+  margin-top: 60px;
   height: 100vh;
 }
 .section4_info {
