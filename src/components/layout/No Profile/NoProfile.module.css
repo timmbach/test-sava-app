@@ -1,0 +1,59 @@
+.no_profile_header {
+  display: flex;
+  gap: 78px;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.no_profile_header .logo_div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.no_profile_header .actions_div {
+  display: flex;
+  gap: 370px;
+}
+
+.no_profile_body {
+  display: flex;
+  justify-content: center;
+  padding-top: 192px;
+}
+
+.no_profile_body section {
+  display: flex;
+  gap: 74px;
+  max-width: 902.26px;
+  align-items: center;
+}
+
+.no_profile_body h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.no_profile_body p {
+  margin: 14px 0 42px;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.no_profile_body form input {
+  display: none;
+}
+
+.no_profile_body form label {
+  background-color: var(--primary-color);
+  cursor: pointer;
+  color: white;
+  display: flex;
+  font-weight: 600;
+  font-size: 19px;
+  width: 431px;
+  height: 56px;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+}
