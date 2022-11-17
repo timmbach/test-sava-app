@@ -3,6 +3,34 @@
   justify-content: center;
 }
 
+.uploadMore {
+}
+
+.uploadMore .imageDiv {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.uploadMore label {
+  position: absolute;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 24px;
+  bottom: 2rem;
+  left: 50%;
+}
+
+.uploadMore img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
 .upload > div {
   max-width: 500px;
   display: flex;
@@ -28,7 +56,8 @@
   margin-bottom: 28px;
 }
 
-.upload input {
+.upload input,
+.uploadMore input {
   display: none;
 }
 
@@ -78,7 +107,7 @@
   display: flex;
   justify-content: flex-end;
   text-transform: uppercase;
-  gap: 42px;
+  gap: 35px;
 }
 
 .upload aside > div .btn_div button {
@@ -90,4 +119,20 @@
   text-transform: uppercase;
   background-color: transparent;
   color: var(--primary-color);
+}
+
+.upload aside > div .btn_div input {
+  display: none;
+}
+
+.upload aside > div .btn_div .btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 0;
 }

@@ -57,6 +57,10 @@
   font-weight: 500;
 }
 
+.no_profile_body input {
+  display: none;
+}
+
 .no_profile_body .btn {
   background-color: var(--primary-color);
   cursor: pointer;
