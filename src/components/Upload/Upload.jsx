@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import styles from './Upload.module.css'
 import hero from '../../assets/pana.png'
 
@@ -7,7 +7,7 @@ const Upload = () => {
   const [access, setAccess] = useState(false)
   const [location, setLocation] = useState(false)
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   return (
     <div className={styles.upload}>
