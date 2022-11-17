@@ -14,4 +14,6 @@
 .dash_body {
   width: 100%;
   min-height: 70vh;
+
+  border: 1px solid red;
 }
