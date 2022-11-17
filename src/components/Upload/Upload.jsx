@@ -6,8 +6,32 @@ import hero from '../../assets/pana.png'
 const Upload = () => {
   const [access, setAccess] = useState(false)
   const [location, setLocation] = useState(false)
+  const [images, setImages] = useState([])
 
   // const navigate = useNavigate()
+
+  if (images.length) {
+    return (
+      <div className={styles.uploadMore}>
+        <div className={styles.imageDiv}>
+          {images.map((image, index) => {
+            return <img key={index} src={image} alt={image} />
+          })}
+        </div>
+        <div>
+          <label htmlFor='local-upload' className={styles.btn}>
+            upload more stuffs
+          </label>
+          <input
+            type='file'
+            id='local-upload'
+            accept='image/*'
+            onChange={e => setImages(prev => [...prev, URL.createObjectURL(e.target.files[0])])}
+          />
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className={styles.upload}>
@@ -21,11 +45,16 @@ const Upload = () => {
           images without stress
         </p>
         <div>
-          <label htmlFor='upload' onClick={() => setAccess(prev => !prev)}>
+          {/* <label onClick={() => setAccess(prev => !prev)}>Start uploading</label> */}
+          <label htmlFor='local-upload' className={styles.btn}>
             Start uploading
           </label>
-          {/* i still don't know how to implement the file with permission */}
-          {/* <input type='file' id='upload' accept='image/*' /> */}
+          <input
+            type='file'
+            id='local-upload'
+            accept='image/*'
+            onChange={e => setImages(prev => [...prev, URL.createObjectURL(e.target.files[0])])}
+          />
         </div>
         {access && (
           <aside>
@@ -53,14 +82,21 @@ const Upload = () => {
               <p>We would use your location in sorting and organizing your images and memories.</p>
               <div className={styles.btn_div}>
                 <button onClick={() => setLocation(prev => !prev)}>Don't allow</button>
-                <button
-                  onClick={() => {
-                    setLocation(prev => !prev)
-                    // use navigate here... i dont know where to tho
-                  }}
-                >
-                  Allow
-                </button>
+                <div>
+                  <label
+                    htmlFor='local-upload'
+                    className={styles.btn}
+                    onClick={() => {
+                      setTimeout(() => {
+                        setLocation(prev => !prev)
+                      }, 2000)
+                      // use navigate here... i dont know where to tho
+                    }}
+                  >
+                    allow
+                  </label>
+                  <input type='file' id='local-upload' accept='image/*' />
+                </div>
               </div>
             </div>
           </aside>
