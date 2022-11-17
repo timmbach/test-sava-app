@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import hero from '../../../assets/no-profile-lady.png'
 import styles from './NoProfile.module.css'
+import NoProfileUploadModal from './NoProfileUploadModal'
 
 const NoProfileBody = () => {
+  const [toggleModal, setToggleModal] = useState(false)
+
+  const closeModal = () => {
+    setToggleModal(prev => !prev)
+  }
+
   return (
     <div className={styles.no_profile_body}>
       <section>
@@ -13,14 +20,15 @@ const NoProfileBody = () => {
             Please upload a profile picture to access all our features. This will help us with storing and automatically
             sorting your data into categories.
           </p>
-          <div className={styles.button_shared}>
-            <label htmlFor='local-upload' className={styles.btn}>
+          <div>
+            <label className={styles.btn} onClick={() => setToggleModal(prev => !prev)}>
               Upload profile picture
             </label>
-            <input type='file' id='local-upload' accept='image/*' />
           </div>
         </aside>
       </section>
+
+      {toggleModal && <NoProfileUploadModal closeModal={closeModal} />}
     </div>
   )
 }
