@@ -8,6 +8,8 @@ const Upload = () => {
   const [location, setLocation] = useState(false)
   const [images, setImages] = useState([])
 
+  console.log(images)
+
   const navigate = useNavigate()
 
   if (images.length) {

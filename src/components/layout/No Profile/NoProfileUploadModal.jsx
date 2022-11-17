@@ -3,7 +3,7 @@ import styles from './NoProfile.module.css'
 import { GrFormClose } from 'react-icons/gr'
 import profile from '../../../assets/profile.jpg'
 import pencil from '../../../assets/ph_pencil-simple.png'
-import trash from '../../../assets/trash.png'
+import trash from '../../../assets/camera2.png'
 import NoProfileWebcam from './NoProfileWebcam'
 
 const NoProfileUploadModal = ({ closeModal }) => {
