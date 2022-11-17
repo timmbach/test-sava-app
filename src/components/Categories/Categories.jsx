@@ -8,7 +8,7 @@ const Categories = () => {
     alert('This functionality is still in the pipeline! Thanks for your patience.');
   };
   return (
-    <section>
+    <section className={styles.categories_section}>
       <div className={styles.section_header}>
         <h3>Categories</h3>
         <button onClick={handleCreateCategories}>
