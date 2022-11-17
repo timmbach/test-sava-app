@@ -42,7 +42,7 @@
   align-items: center;
 }
 
-.no_profile_body img {
+.no_profile_body section > img {
   width: 320px;
 }
 
@@ -73,4 +73,117 @@
   border-radius: 12px;
   justify-content: center;
   align-items: center;
+}
+
+.no_profile_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(125, 125, 125, 0.5);
+}
+
+.no_profile_modal section {
+  padding: 1.8rem 3rem;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.no_profile_modal h2 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.no_profile_modal .close_icon {
+  position: absolute;
+  color: #3c4043;
+  font-size: 30px;
+  right: 22px;
+  top: 18px;
+  cursor: pointer;
+}
+
+.no_profile_modal div > img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.no_profile_modal .btn_div {
+  display: flex;
+  gap: 6rem;
+}
+
+.no_profile_modal .btn_div button {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  padding: 0.4rem 1.8rem;
+}
+
+.no_profile_modal .btn_div button:first-child {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+.no_profile_modal .btn_div button:last-child {
+  color: var(--primary-color);
+  box-shadow: 0 0 0 0.05rem var(--primary-color);
+}
+
+.no_profile_webcam {
+  border-radius: 4px;
+  background-color: rgba(125, 125, 125);
+  position: relative;
+  width: 450px;
+  height: 337.5px;
+}
+
+.no_profile_webcam button {
+  position: absolute;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  padding: 0.4rem 1.8rem;
+  background: transparent;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  box-shadow: 0 0 0 0.05rem white;
+}
+
+.no_profile_webcam .icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: white;
+  font-weight: 300;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.no_profile_webcam .webcam {
+  width: 100%;
 }
