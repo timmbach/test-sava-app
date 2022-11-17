@@ -3,9 +3,11 @@
 	min-height: 100vh;
 	background: #d9d9f6;
 
-	position: absolute;
+	position: fixed;
+	/* position: absolute; */
 	top: 0;
 	left: 0;
+	
 
 	display: flex;
 	flex-direction: column;

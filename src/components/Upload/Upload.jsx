@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import styles from './Upload.module.css'
 import hero from '../../assets/pana.png'
 
@@ -8,7 +8,7 @@ const Upload = () => {
   const [location, setLocation] = useState(false)
   const [images, setImages] = useState([])
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   if (images.length) {
     return (
