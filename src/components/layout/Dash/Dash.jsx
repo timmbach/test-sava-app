@@ -9,7 +9,7 @@ export const Dash = () => {
     <div className={styles.dash_wrapper}>
       <div className={styles.dash_header}>
         <SearchInput />
-        <Button text='Upload' />
+        <Button />
       </div>
 
       <div className={styles.dash_body}>

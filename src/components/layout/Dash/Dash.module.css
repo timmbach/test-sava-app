@@ -1,0 +1,18 @@
+.dash_wrapper {
+  margin-left: 291px;
+  padding: 50px 40px 15px 30px;
+  min-height: 100vh;
+}
+
+.dash_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 47px;
+}
+
+.dash_body {
+  width: 100%;
+  min-height: 70vh;
+  border: 1px solid red;
+}
