@@ -1,15 +1,19 @@
 import React, { useRef, useState } from "react";
-import { Alert } from "react-bootstrap";
+import  Alert  from "../SignUp/Alert";
 import { Link } from "react-router-dom";
-// import { useAuth } from "../../contexts/AuthContext";
 import LogoCloud from "../../assets/cloud-logo.png";
 import LogoText from "../../assets/SAVA-logo.png";
+import cloudSava from "../../assets/sava-cloud.png";
 import forgotpassword_image from "../../assets/forgotpassword/forgotpassword_image.png";
 import css from "./forgotpassword.module.css";
+import { useAuth } from '../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom'
+
 
 const ForgotPassword = () => {
   const emailRef = useRef();
-  // const { resetPassword } = useAuth();
+  const {resetPassword} = useAuth();
+  const navigate = useNavigate()
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,8 +25,20 @@ const ForgotPassword = () => {
       setMessage("");
       setError("");
       setLoading(true);
-      // await resetPassword(emailRef.current.value);
-      setMessage("Password reset has been sent to registered email!");
+      resetPassword(emailRef.current.value)
+      .then(res => {
+        console.log(res);
+        if (res.data.status_code === 200) {
+          navigate('/new-password', {
+            state: {
+              email: emailRef.current.value
+            }
+          }) 
+        } else {
+          setError(res.data.message)
+        }
+      })
+      .catch(err => console.log(err))
     } catch {
       setError("Failed to Reset Password");
     }
@@ -33,7 +49,12 @@ const ForgotPassword = () => {
     <div className={css.main_div}>
       <div className={css.signup}>
         <div className={css.left}>
-          <img src={forgotpassword_image} alt="forgot password" />
+          <img
+            src={forgotpassword_image}
+            alt="forgot password"
+            className={css.left_image1}
+          />
+          <img src={cloudSava} alt="sign in" className={css.left_image2} />
         </div>
         <div className={css.right}>
           <div className={css.logo}>
@@ -41,12 +62,11 @@ const ForgotPassword = () => {
             <img src={LogoText} alt="logo-text" />
           </div>
 
-          <div style={{ width: "300px" }}>
+          <div style={{ width: "80%" }}>
             <h3 className="">Forgot Password</h3>
             <span>No need to worry, we'll send you reset instructions</span>
-            {error && <Alert variant="danger">{error}</Alert>}
-            {message && <Alert variant="success">{message}</Alert>}
-            <form onSubmit={handleSubmit}>
+            {error && <Alert message={error} />}
+            <form className={css.form} onSubmit={handleSubmit}>
               <div className={css.form_group} id="email">
                 <label htmlFor="email">Email</label>
                 <input

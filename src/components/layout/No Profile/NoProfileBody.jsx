@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import hero from '../../../assets/no-profile-lady.png'
+import { useGlobalStore } from '../../../contexts/GlobalStore'
 import styles from './NoProfile.module.css'
 import NoProfileUploadModal from './NoProfileUploadModal'
 
 const NoProfileBody = () => {
   const [toggleModal, setToggleModal] = useState(false)
+
+  const { uploadError } = useGlobalStore()
 
   const closeModal = () => {
     setToggleModal(prev => !prev)
@@ -12,6 +15,11 @@ const NoProfileBody = () => {
 
   return (
     <div className={styles.no_profile_body}>
+      {uploadError.error && (
+        <div className={styles.error} style={{ backgroundColor: uploadError.color }}>
+          {uploadError.text}
+        </div>
+      )}
       <section>
         <img src={hero} alt='lady-avatar' />
         <aside>

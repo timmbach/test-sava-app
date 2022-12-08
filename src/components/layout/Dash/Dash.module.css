@@ -14,5 +14,29 @@
 .dash_body {
   width: 100%;
   min-height: 70vh;
-  border: 1px solid red;
+}
+.button {
+  display: none;
+}
+.menu {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .dash_wrapper {
+    margin-left: 0;
+    padding: 50px 40px 15px 30px;
+  }
+  .menu {
+    display: block;
+  }
+  .dash_header {
+    margin-bottom: 0;
+  }
+
+  .dash_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

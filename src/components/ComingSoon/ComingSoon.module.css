@@ -1,0 +1,26 @@
+.coming_soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8rem;
+  padding-top: 2rem;
+}
+
+.coming_soon .btn {
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  background: var(--primary-color);
+  border-radius: 8px;
+  padding: 0.5rem 1.4rem;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.coming_soon .btn:hover {
+  background: var(--secondary-color);
+}
+.coming_soon_img {
+  width: 90%;
+}

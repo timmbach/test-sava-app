@@ -1,0 +1,75 @@
+.bin_section {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.bin_section .bin_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bin_header button {
+  background: transparent;
+  border: none;
+  display: flex;
+  gap: 10px;
+}
+
+.bin_header h3 {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 140%;
+}
+
+.bin_header span {
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 145%;
+  color: #4a4a4a;
+}
+
+.bin_header button {
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 145%;
+  color: #4a4a4a;
+}
+
+.bin_section > p {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 160%;
+}
+
+.bin_section .image_card {
+  width: 256px;
+  height: 168px;
+}
+
+.bin_section .images_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bin_section .image_options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+}
+
+.bin_section .image_options button {
+  border: none;
+  background: none;
+  width: 25px;
+  height: 22px;
+}
+
+.bin_section .image_options input {
+  width: 25px;
+  height: 22px;
+}

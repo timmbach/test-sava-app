@@ -3,6 +3,7 @@
   gap: 62px;
   margin-top: 30px;
   justify-content: center;
+  width: 100vw;
 }
 
 .no_profile_header .logo_div {
@@ -20,19 +21,44 @@
 .no_profile_header .btn {
   opacity: 0.5;
   border: none;
-  cursor: pointer;
   color: var(--white);
   background: var(--primary-color);
   border-radius: 12px;
   padding: 8px 56px;
   font-weight: 600;
   font-size: 19px;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .no_profile_body {
   display: flex;
   justify-content: center;
   padding-top: 100px;
+}
+
+.no_profile_body .error {
+  position: fixed;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  text-transform: capitalize;
+  border-radius: 0.4rem;
+  animation: err 2s ease-in-out forwards;
+  z-index: 10;
+}
+
+@keyframes err {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .no_profile_body section {
@@ -98,6 +124,40 @@
   overflow: hidden;
 }
 
+.no_profile_modal section .loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(125, 125, 125, 0.5);
+}
+
+.no_profile_modal section .loading > div {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 166px;
+  height: 166px;
+  border-radius: 50%;
+}
+
+.no_profile_modal section .request {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+  color: var(--primary-color);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 .no_profile_modal h2 {
   font-weight: 600;
   font-size: 24px;
@@ -110,6 +170,13 @@
   right: 22px;
   top: 18px;
   cursor: pointer;
+}
+
+.no_profile_modal .profileImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 0.05rem solid rgba(125, 125, 125, 0.5);
 }
 
 .no_profile_modal div > img {
@@ -154,6 +221,15 @@
   height: 337.5px;
 }
 
+.no_profile_webcam .camera_text {
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5%;
+  text-align: center;
+}
+
 .no_profile_webcam button {
   position: absolute;
   display: flex;
@@ -186,4 +262,34 @@
 
 .no_profile_webcam .webcam {
   width: 100%;
+}
+
+@media (max-width: 500px) {
+  .no_profile_body section {
+    flex-direction: column;
+  }
+  .no_profile_header {
+    margin: 30px 15px 0px 15px;
+    justify-content: space-between;
+  }
+  .no_profile_header .logo_div {
+    width: 30%;
+  }
+  .no_profile_header .logo_div_image {
+    width: 75%;
+  }
+
+  .no_profile_header .actions_div {
+    gap: 5px;
+    width: 50%;
+  }
+  .no_profile_header .btn {
+    padding: 8px 30px;
+  }
+  .no_profile_body section {
+    max-width: 80%;
+  }
+  .no_profile_modal h2 {
+    font-size: 18px;
+  }
 }

@@ -1,20 +1,30 @@
-import React from "react";
-import styles from "./Modal.module.css";
+import React from 'react'
+import styles from './Modal.module.css'
 
-export const Modal = ({ title, text, action1, action2 }) => {
-	return (
-		<div className={styles.modal_wrapper}>
-			<div className={styles.modal}>
-				<div className={styles.modal_text}>
-					<h4>{title || "Allow Sava use your Location?"}</h4>
-					<p>{text || "We would use your location in sorting and organizing your images and memories."}</p>
-				</div>
+export const Modal = ({ title, text, action1, action2, onClick1, onClick2, input_type, onChange, refItem }) => {
+  return (
+    <aside className={styles.modal_wrapper}>
+      <div>
+        <h4>{title}</h4>
+        <p>{text}</p>
+        <div className={styles.btn_div}>
+          <button onClick={onClick1}>{action1}</button>
 
-				<div className={styles.modal_actions}>
-					<button className={styles.modal_btn}>{action1 || "don't allow"}</button>
-					<button className={styles.modal_btn}>{action2 || "allow"}</button>
-				</div>
-			</div>
-		</div>
-	);
-};
+          <div>
+            <button onClick={onClick2}>{action2}</button>
+            {input_type && (
+              <input
+                type='file'
+                id='local-upload'
+                accept='image/*'
+                style={{ display: 'none' }}
+                ref={refItem}
+                onChange={onChange}
+              />
+            )}
+          </div>
+        </div>
+      </div>
+    </aside>
+  )
+}

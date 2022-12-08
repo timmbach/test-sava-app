@@ -16,3 +16,9 @@
 .button_shared .btn:hover {
   background: var(--secondary-color);
 }
+
+@media (max-width: 500px) {
+  .button_shared .btn {
+    padding: 8px 25px;
+  }
+}
