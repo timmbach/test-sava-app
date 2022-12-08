@@ -1,24 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import css from "./termsandconditions.module.css";
 import LogoCloud from "../../assets/cloud-logo.png";
 import LogoText from "../../assets/SAVA-logo.png";
 
 const TermsAndConditions = () => {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className={css.container_div}>
-        <header>
-          <div className={css.logo}>
-            <img src={LogoCloud} alt="logo-cloud" />
-            <img src={LogoText} alt="logo-text" />
+        <header className={css.header}>
+         <Link style={{cursor: "pointer", width: "100%",
+                 marginLeft: "0px",
+                marginTop: "15px" }} to="/dashboard">
+                 <div className={css.logo}>
+                  <img src={LogoCloud} alt="logo-cloud" />
+                  <img src={LogoText} alt="logo-text" />
+                </div>
+         </Link>
+          <div onClick={() => setNavOpen(true)} className={css.nav_icons}>
+            <i class="fa-solid fa-bars"></i>
           </div>
+          {navOpen && (
+            <nav className={css.nav_menu}>
+              <div className={css.nav_menu_top}>
+                <Link style={{cursor: "pointer", width: "100%",
+                 marginLeft: "0px",
+                marginTop: "15px" }} to="/dashboard">
+                 <div className={css.logo}>
+                  <img src={LogoCloud} alt="logo-cloud" />
+                  <img src={LogoText} alt="logo-text" />
+                </div>
+         </Link>
+                <div style={{ paddingRight: "4rem" }} onClick={() => setNavOpen(false)} className={css.nav_icons}>
+                  <i class="fa-solid fa-xmark"></i>
+                </div>
+              </div>
+              <div className={css.nav_menu_bottom}>
+                <Link to="/signin">
+                  <button class={css.signin_button_mb}>SIGN IN</button>
+                </Link>
+                <Link to="/signup">
+                  <button class={css.signup_button_mb}>SIGN UP</button>
+                </Link>
+                <ul>
+                  <li>About SAVA</li>
+                  <li>
+                    <Link style={{ textDecoration: "none", color: "black" }} to="/terms-and-conditions">
+                      Terms & Conditions
+                    </Link>
+                  </li>
+                  <li>
+                    <Link style={{ textDecoration: "none", color: "black" }} to="/privacy-policy">
+                      Privacy policy
+                    </Link>
+                  </li>
+                  <li>Help</li>
+                  <li>Chat</li>
+                </ul>
+              </div>
+            </nav>
+          )}
           <nav className={css.nav_links}>
             <Link to="/signin">
-              <button className={css.signin_button}>SIGN IN</button>
+              <button class={css.signin_button}>SIGN IN</button>
             </Link>
             <Link to="/signup">
-              <button className={css.signup_button}>SIGN UP</button>
+              <button class={css.signup_button}>SIGN UP</button>
             </Link>
           </nav>
         </header>
@@ -116,10 +165,14 @@ const TermsAndConditions = () => {
         </main>
         <footer>
           <div className={css.footer_top}>
-            <div className={css.footer_logo}>
-              <img src={LogoCloud} alt="logo-cloud" />
-              <img src={LogoText} alt="logo-text" />
-            </div>
+            <Link style={{cursor: "pointer", width: "40px",
+                 marginRight: "13vw",
+                marginTop: "0px" }} to="/dashboard">
+                 <div className={css.footer_logo}>
+                  <img src={LogoCloud} alt="logo-cloud" />
+                  <img src={LogoText} alt="logo-text" />
+                </div>
+            </Link>
             <nav className={css.footer_nav_links}>
               <ul>
                 <li>About SAVA</li>
@@ -128,7 +181,11 @@ const TermsAndConditions = () => {
                     Terms & Conditions
                   </Link>
                 </li>
-                <li>Privacy policy</li>
+                <li>
+                  <Link style={{ textDecoration: "none", color: "black" }} to="/privacy-policy">
+                    Privacy policy
+                  </Link>
+                </li>
                 <li>Help</li>
                 <li>Chat</li>
               </ul>

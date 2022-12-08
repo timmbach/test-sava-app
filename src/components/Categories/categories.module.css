@@ -1,7 +1,6 @@
 section.categories_section {
   display: flex;
   flex-direction: column;
-  /* align-items: flex-start; */
   padding: 0px;
   gap: 40px;
 }
@@ -72,4 +71,16 @@ a {
   font-weight: 500;
   font-size: 19px;
   line-height: 160%;
+}
+
+@media screen and (max-width: 997px) {
+  .section_header h3 {
+    font-size: 24px;
+
+  }
+  
+  .section_header button span {
+    font-size: 15px;
+    line-height: 24px;
+  }
 }

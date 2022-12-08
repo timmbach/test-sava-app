@@ -1,3 +1,9 @@
 .layout_wrapper {
   position: relative;
 }
+
+@media (max-width: 500px) {
+  .sidebar {
+    display: none;
+  }
+}

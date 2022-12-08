@@ -1,34 +1,81 @@
 .upload {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
-.uploadMore {
-}
-
-.uploadMore .imageDiv {
+.uploadMore .imageDiv .image_header {
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 3rem;
 }
 
-.uploadMore label {
-  position: absolute;
-  background-color: var(--primary-color);
+.uploadMore .imageDiv .image_header > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.uploadMore .imageDiv .image_header > div img {
+  width: 1.2rem;
+  height: 1.2rem;
   cursor: pointer;
-  color: white;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 12px 24px;
-  bottom: 2rem;
-  left: 50%;
 }
 
-.uploadMore img {
-  width: 200px;
-  height: 200px;
+.uploadMore .imageDiv .loader {
+  border-radius: 1rem;
+  margin: 0 auto;
+}
+
+.uploadMore .imageDiv .serverImg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.uploadMore .imageDiv .serverImg .rel {
+  position: relative;
+  height: 133px;
+}
+
+.uploadMore .openImg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadMore .openImg .closeImg {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+}
+
+.uploadMore .openImg .closeImg:hover {
+  color: var(--primary-color);
+}
+
+.uploadMore .openImg img {
+  object-fit: contain;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.uploadMore .imageDiv img {
   object-fit: cover;
+  cursor: pointer;
+  height: 133px;
+  width: 100%;
 }
 
 .upload > div {
@@ -38,6 +85,10 @@
   align-items: center;
   text-align: center;
   margin-top: 30px;
+}
+
+.upload .loader {
+  border-radius: 1rem;
 }
 
 .upload img {
@@ -61,14 +112,15 @@
   display: none;
 }
 
-.upload label {
+.upload_button label {
   background-color: var(--primary-color);
   cursor: pointer;
   color: white;
   border-radius: 12px;
   font-weight: 600;
   font-size: 16px;
-  padding: 10px 106px;
+  padding: 10px 80px;
+  width: 90%;
 }
 
 .upload aside {
@@ -81,6 +133,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .upload aside > div {

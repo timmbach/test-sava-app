@@ -1,21 +1,21 @@
 import React, { useRef, useState } from "react";
-import { Alert } from "react-bootstrap";
+import  Alert  from "../SignUp/Alert";
 import { Link, useNavigate } from "react-router-dom";
-// import { useAuth } from "../../contexts/AuthContext";
-import LogoCloud from "../../assets/cloud-logo.png";
+import LogoCloud from "../../assets/sava-cloud.png";
 import LogoText from "../../assets/SAVA-logo.png";
 import signin_image from "../../assets/signin/signin_image.png";
 import css from "./signin.module.css";
+import { useAuth } from '../../contexts/AuthContext';
 
 const SignIn = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  // const { signin } = useAuth();
+  const {authenticate} = useAuth()
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [passwordShow, setPasswordShow] = useState(false);
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handlePasswordShow = () => {
     setPasswordShow(!passwordShow);
@@ -26,9 +26,24 @@ const SignIn = () => {
     try {
       setError("");
       setLoading(true);
-      // await signin(emailRef.current.value, passwordRef.current.value);
-      history("/");
-    } catch {
+      await authenticate(emailRef.current.value, passwordRef.current.value)
+      .then(res => {
+        if (res.data.status_code === 490) {
+          navigate('/verify-email', {
+            state: {
+              email: emailRef.current.value
+            }
+          }) 
+        } else if (res.data.status_code) {
+          setError(res.data.message)
+        } else if (res.data.body.Token.AuthenticationResult && res.data.body.ProfilePixPresent) {
+          navigate("/dashboard");
+        } else if (res.data.body.Token && !res.data.body.ProfilePixPresent) {
+          navigate("/upload-new-user")
+        }
+      })
+    } 
+    catch {
       setError("Failed to Sign In");
     }
 
@@ -38,7 +53,8 @@ const SignIn = () => {
     <div className={css.main_div}>
       <div className={css.signup}>
         <div className={css.left}>
-          <img src={signin_image} alt="sign in" />
+          <img src={signin_image} alt="sign in" className={css.left_image1} />
+          <img src={LogoCloud} alt="sign in" className={css.left_image2} />
         </div>
         <div className={css.right}>
           <div className={css.logo}>
@@ -48,9 +64,11 @@ const SignIn = () => {
 
           <div>
             <h3 className="">Welcome back!</h3>
-            <span style={{ fontSize: "0.8rem", fontWeight: "500" }}>Please fill in your details</span>
-            {error && <Alert variant="danger">{error}</Alert>}
-            <form onSubmit={handleSubmit}>
+            <span style={{ fontSize: "0.8rem", fontWeight: "500" }}>
+              Please fill in your details
+            </span>
+            {error && <Alert message={error} />}
+            <form className={css.form} onSubmit={handleSubmit}>
               <div className={css.form_group} id="email">
                 <label htmlFor="email">Email</label>
                 <input
@@ -59,9 +77,7 @@ const SignIn = () => {
                   type="email"
                   ref={emailRef}
                   required
-                  autocomplete="off"
-                  // placeholder="Email"
-                  // class="info-placeholder"
+                  autoComplete="off"
                 ></input>
               </div>
               <div className={css.form_group} id="password">
@@ -72,17 +88,16 @@ const SignIn = () => {
                   type={passwordShow ? "text" : "password"}
                   ref={passwordRef}
                   required
-                  // placeholder="Password"
-                  // class="info-placeholder"
                 ></input>
                 <i
-                  className={`${css.eye_icon} fa-solid ${passwordShow ? "fa-eye" : "fa-eye-slash"}`}
+                  className={`${css.eye_icon} fa-solid ${
+                    passwordShow ? "fa-eye" : "fa-eye-slash"
+                  }`}
                   onClick={handlePasswordShow}
                 ></i>
               </div>
               <div
                 style={{
-                  // marginRight: "-10px",
                   marginTop: "10px",
                   display: "flex",
                   justifyContent: "space-between",
@@ -109,7 +124,11 @@ const SignIn = () => {
                   </Link>
                 </div>
               </div>
-              <button disabled={loading} className={css.form_button} type="submit">
+              <button
+                disabled={loading}
+                className={css.form_button}
+                type="submit"
+              >
                 Sign In
               </button>
             </form>
